@@ -1,0 +1,124 @@
+{
+  "code_fingerprint": "776723ddbf6ac39428ad14c0fbbeb85dbb067058a742af1eb3ec533d5345cc42",
+  "files": [
+    {
+      "file": "a0_inventory.py",
+      "sha256": "27a7bd77b107d9beac962fb287d87dfff1e0a4e7783dbf9f94a9b23b668df27b",
+      "bytes": 6799
+    },
+    {
+      "file": "a1_source_map.py",
+      "sha256": "6270129e9968fb0e235793558abdd58a784517b742d7d1ddd794f9d9320f7180",
+      "bytes": 17935
+    },
+    {
+      "file": "a1cal_calibrate.py",
+      "sha256": "668cb2b5fd6163c5e05aa767f09d90c2ad98f4f7e3e9968e4cf050f2232a3c4f",
+      "bytes": 10019
+    },
+    {
+      "file": "a2_cross_audit.py",
+      "sha256": "841811456116c77a8a47b447b23cb4c9d6bacd3b5fdd08e772d9675205e36032",
+      "bytes": 7175
+    },
+    {
+      "file": "a6s_pretrain_probe.py",
+      "sha256": "3be3335a0ce34b495436f969a2b7d7aa41f30419eb226a94141a04cb8786c034",
+      "bytes": 23559
+    },
+    {
+      "file": "arch_probe.py",
+      "sha256": "15b42a68bd37f1d2a2394d5b53c86cda6825b251859bd790181aa005a6e27ae7",
+      "bytes": 31798
+    },
+    {
+      "file": "audit_leakage.py",
+      "sha256": "b7f85a61c6f0397a9ab77b9193be511f0a9c08bf112c129aab9911b2b4615fc2",
+      "bytes": 15317
+    },
+    {
+      "file": "lib_dedup.py",
+      "sha256": "2a00f863e03c12e93718839bbcbf5bda77ef6b134f86202219dafc75c587a791",
+      "bytes": 23846
+    },
+    {
+      "file": "lib_provenance.py",
+      "sha256": "bfbccd69a804acb772be97c3efc04c34e58fa0abb7eac802f80cafb591d0028f",
+      "bytes": 8426
+    },
+    {
+      "file": "log_test_access.py",
+      "sha256": "bf775ec698b828b45289a5621b54c06e310a98f552ab14257e7c096a7d4a675e",
+      "bytes": 3617
+    },
+    {
+      "file": "run_all.py",
+      "sha256": "e1ed29794bf361f08439c3b8deb1624f8c3e1a6da0111636a4bb14b771bd8f75",
+      "bytes": 4275
+    },
+    {
+      "file": "stage2_stats.py",
+      "sha256": "f6059684c869988dda2ed244981ee11b57e2159b83934d75a39ef12eb024ddd9",
+      "bytes": 19347
+    },
+    {
+      "file": "stats_lib.py",
+      "sha256": "90ff93677716dc2edb965cd2a572a68552ce9bba130f25d36d5ecfaf59e6c0b9",
+      "bytes": 24251
+    },
+    {
+      "file": "test_acceptance.py",
+      "sha256": "531bc45b47b7e1f18be2e312fe65e7ba5f8b53465756bd8bc272213debc742cf",
+      "bytes": 39965
+    },
+    {
+      "file": "_provenance_report.json",
+      "sha256": "86d4459580e91824d4c1c445cb14cdc69175985631977d8db81938b4ad8ea7b1",
+      "bytes": 3347
+    },
+    {
+      "file": "dedup_config.json",
+      "sha256": "0b95a09b2d7eac03bcce408aec6d4acd2717541287eb13628ca0ee22bbfd4b98",
+      "bytes": 1405
+    }
+  ],
+  "freshness": {
+    "n_json": 6,
+    "n_stale": 0,
+    "n_missing_fp": 0,
+    "rows": [
+      {
+        "file": "_a0_out\\inventory.json",
+        "fresh": true,
+        "reason": "OK"
+      },
+      {
+        "file": "_a1cal_out\\suggested_thresholds.json",
+        "fresh": true,
+        "reason": "OK"
+      },
+      {
+        "file": "_a6s_out\\weight_map_report.json",
+        "fresh": true,
+        "reason": "OK"
+      },
+      {
+        "file": "_arch_out\\arch_probe.json",
+        "fresh": true,
+        "reason": "OK"
+      },
+      {
+        "file": "_audit_out\\leakage_audit.json",
+        "fresh": true,
+        "reason": "OK"
+      },
+      {
+        "file": "_s2_out\\stage2_report.json",
+        "fresh": true,
+        "reason": "OK"
+      }
+    ]
+  },
+  "stamped_at_utc": "2026-09-23T02:27:19+00:00",
+  "producer_version": "v2.6"
+}

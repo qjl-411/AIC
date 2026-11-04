@@ -1,0 +1,12 @@
+{
+  "n_total": 1279,
+  "n_correct": 1266,
+  "n_incorrect": 13,
+  "accuracy": 0.989836,
+  "mean_conf_all": 0.995001,
+  "mean_conf_correct": 0.995253,
+  "mean_conf_incorrect": 0.970407,
+  "median_conf_incorrect": 0.994685,
+  "max_conf_incorrect": 0.999971,
+  "min_conf_correct": 0.500473
+}

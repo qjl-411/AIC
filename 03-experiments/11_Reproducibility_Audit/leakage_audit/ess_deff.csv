@@ -1,0 +1,6 @@
+﻿class_,n_images,n_sources,mean_cluster_size,largest_component,icc_approx,deff,ess,note
+Mild Impairment,2560,2435,1.051,2,0.0513,1.003,2553.3,ICC 为基于冗余比例的**解释性近似**，非严格 ICC(1)
+Moderate Impairment,2560,2161,1.185,64,0.0689,1.013,2527.8,ICC 为基于冗余比例的**解释性近似**，非严格 ICC(1)
+No Impairment,2560,2560,1.0,1,0.0,1.0,2560.0,ICC 为基于冗余比例的**解释性近似**，非严格 ICC(1)
+Very Mild Impairment,2560,2503,1.023,2,0.0228,1.001,2558.7,ICC 为基于冗余比例的**解释性近似**，非严格 ICC(1)
+ALL,10240,9659,1.06,64,0.0343,1.002,10218.9,解释性指标，禁止当门槛

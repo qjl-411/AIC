@@ -1,0 +1,37 @@
+{
+  "source_predictions": "E:/Code/NeuroEvo/NeuroEvo_AD/dmsa_final_train(1)/dmsa_final_train_seed42_epoch126/sealed_test_once/test_predictions.csv",
+  "n_samples": 1279,
+  "n_clusters": 106,
+  "macro_auc": 0.999552,
+  "per_class": [
+    {
+      "class_name": "Mild Impairment",
+      "support": 179,
+      "auc": 0.999802,
+      "ci95_lo": 0.999385,
+      "ci95_hi": 1.0
+    },
+    {
+      "class_name": "Moderate Impairment",
+      "support": 12,
+      "auc": 1.0,
+      "ci95_lo": 1.0,
+      "ci95_hi": 1.0
+    },
+    {
+      "class_name": "No Impairment",
+      "support": 640,
+      "auc": 0.999403,
+      "ci95_lo": 0.998627,
+      "ci95_hi": 0.999884
+    },
+    {
+      "class_name": "Very Mild Impairment",
+      "support": 448,
+      "auc": 0.999001,
+      "ci95_lo": 0.997865,
+      "ci95_hi": 0.999745
+    }
+  ],
+  "note": "AUC 的 95% CI 用 cluster bootstrap（统计单位 = 文件名前缀族，用于弱化同源派生副本的伪独立）。Moderate 类 support=12，CI 极宽，报告时必须显式说明样本量限制。"
+}

@@ -1,0 +1,40 @@
+{
+  "variant": "no_mdc",
+  "fold": 5,
+  "switches": {
+    "use_sam": true,
+    "use_mdc": false,
+    "use_ilf": true,
+    "use_dual_path": true
+  },
+  "params": 45037801,
+  "fingerprint": "d8c00a220d1560689a17828421b0b4479542aa89f1522a797eeba0f7461cb45c",
+  "fingerprint_equals_baseline": false,
+  "best": {
+    "accuracy": 0.98974609375,
+    "epoch": 107,
+    "precision": 0.9897685064643991,
+    "recall": 0.98974609375,
+    "f1": 0.9897497892943656,
+    "kappa": 0.986328125,
+    "val_loss": 0.03807767098868352
+  },
+  "epochs_run": 200,
+  "elapsed_seconds": 9340.508904218674,
+  "val_rows": 2048,
+  "val_class_counts": {
+    "Mild Impairment": 512,
+    "Moderate Impairment": 512,
+    "No Impairment": 512,
+    "Very Mild Impairment": 512
+  },
+  "provenance": {
+    "script": "g1_ablation.py",
+    "script_sha256": "9548d851eb0eb69e945415a8fbde7528f7f9c45bfc4cf0cb078802c24fc2fcb7",
+    "written_at_utc": "2026-09-25T07:30:45.985533+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

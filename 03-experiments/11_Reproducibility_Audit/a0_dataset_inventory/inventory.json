@@ -1,0 +1,167 @@
+{
+  "root": "E:\\Code\\NeuroEvo\\DMSA_netV2",
+  "baseline_files": [
+    {
+      "path": "DMSA_net/smoke_test.py",
+      "exists": true,
+      "sha256": "b3d8a2f39c573c8df09441e98f5f2571dcd71156b4037a78137af6eb593784ea"
+    },
+    {
+      "path": "DMSA_net/train_5fold.py",
+      "exists": true,
+      "sha256": "990931ddf43015c7e8d9ecbbea789aef1eb6bf6daba2556a0b67baba58b446a3"
+    },
+    {
+      "path": "DMSA_net/final_train.py",
+      "exists": true,
+      "sha256": "f81a248450c79957efd02772394f8979ff1b2c403ff7ffe87e0887fbd4758b8b"
+    },
+    {
+      "path": "DMSA_net/final_test.py",
+      "exists": true,
+      "sha256": "8e284e6403086368355100c8d7648d4f7af183f38c4f200f80c764e25c1decbc"
+    },
+    {
+      "path": "DMSA_net/data_prepare_check.py",
+      "exists": true,
+      "sha256": "6f75e31ae39c65823978d89bac7429ccf510d6cd4525c7777459a7f1021a0ab6"
+    },
+    {
+      "path": "DMSA_net/pcv_v2_folds_seed42.csv",
+      "exists": true,
+      "sha256": "51f5b251f9e7cce6c557798ae8fa8e263a6baf58c125524be4e1a1df4bd9edfd"
+    },
+    {
+      "path": "DMSA_net/pcv_test_manifest_SEALED.csv",
+      "exists": true,
+      "sha256": "bc8e53e24722167fb3bf0ab468863ed8d0bcaec1341bb52007021802c31126a6"
+    }
+  ],
+  "image_dirs": {
+    "E:\\Code\\NeuroEvo\\DMSA_netV2\\Alzheimer's MRI Dataset\\Alzheimer's MRI Dataset\\Combined Dataset\\train": 10240,
+    "E:\\Code\\NeuroEvo\\DMSA_netV2\\Alzheimer's MRI Dataset\\Alzheimer's MRI Dataset\\Combined Dataset\\test": 1279
+  },
+  "image_detail": {
+    "E:\\Code\\NeuroEvo\\DMSA_netV2\\Alzheimer's MRI Dataset\\Alzheimer's MRI Dataset\\Combined Dataset\\train": {
+      "Mild Impairment": 2560,
+      "Moderate Impairment": 2560,
+      "No Impairment": 2560,
+      "Very Mild Impairment": 2560
+    },
+    "E:\\Code\\NeuroEvo\\DMSA_netV2\\Alzheimer's MRI Dataset\\Alzheimer's MRI Dataset\\Combined Dataset\\test": {
+      "Mild Impairment": 179,
+      "Moderate Impairment": 12,
+      "No Impairment": 640,
+      "Very Mild Impairment": 448
+    }
+  },
+  "artifacts": {
+    "**/metrics.csv": [],
+    "**/best_model_state*.pth": [],
+    "**/final_model_state*.pth": [],
+    "**/best_metrics.json": []
+  },
+  "torch": "2.13.0+cpu / torchvision 0.28.0+cpu",
+  "tasks": [
+    {
+      "task": "阶段 0.0c 数据集到货验证（v2.7 新增）",
+      "inputs": [
+        "原始图片目录 train",
+        "原始图片目录 test"
+      ],
+      "blocked_action": "无法确认到货数据与冻结 manifest 一致；T14 会失败；此时禁止进入 A1/A2",
+      "missing": [],
+      "blocked": false
+    },
+    {
+      "task": "阶段 0.1 A1 源图映射",
+      "inputs": [
+        "原始图片目录 train",
+        "原始图片目录 test"
+      ],
+      "blocked_action": "无法建立 source_id；阶段 1 全部降级，只能做已有 manifest 的审计",
+      "missing": [],
+      "blocked": false
+    },
+    {
+      "task": "阶段 0.2 A2 train<->test 审计",
+      "inputs": [
+        "原始图片目录 train",
+        "原始图片目录 test"
+      ],
+      "blocked_action": "R6 无法判定；sealed test 的独立性只能写'未验证'",
+      "missing": [],
+      "blocked": false
+    },
+    {
+      "task": "阶段 0.3 基线冻结",
+      "inputs": [
+        "DMSA_net/smoke_test.py",
+        "DMSA_net/train_5fold.py",
+        "DMSA_net/final_train.py",
+        "DMSA_net/final_test.py",
+        "DMSA_net/data_prepare_check.py",
+        "DMSA_net/pcv_v2_folds_seed42.csv",
+        "DMSA_net/pcv_test_manifest_SEALED.csv"
+      ],
+      "blocked_action": "无法证明基线未被改动，fingerprint 校验失去意义",
+      "missing": [],
+      "blocked": false
+    },
+    {
+      "task": "阶段 0.4 五折产物盘点",
+      "inputs": [
+        "五折 metrics.csv",
+        "best_model_state.pth x5",
+        "final_model_state.pth"
+      ],
+      "blocked_action": "阶段 1.4/1.5 的预测侧分析只能改为重训；§5.5 固定 epoch 对照只能读折内日志",
+      "missing": [
+        "五折 metrics.csv",
+        "best_model_state.pth x5",
+        "final_model_state.pth"
+      ],
+      "blocked": true
+    },
+    {
+      "task": "阶段 0.5 协议溯源（v1_val_fold / 论文 0.9990）",
+      "inputs": [
+        "旧 split 文件",
+        "旧 checkpoint",
+        "旧训练日志"
+      ],
+      "blocked_action": "只能写'基于当前材料暂不可复现'，不得升级为'不可复现'",
+      "missing": [
+        "旧 split 文件",
+        "旧 checkpoint",
+        "旧训练日志"
+      ],
+      "blocked": true
+    },
+    {
+      "task": "阶段 3.4 / 5.4 A6-s 静态权重映射",
+      "inputs": [
+        "torch",
+        "torchvision"
+      ],
+      "blocked_action": "贡献 1 的判定推迟；论文需注明未经本项验证",
+      "missing": [],
+      "blocked": false
+    },
+    {
+      "task": "阶段 1.9 subject-level 可得性判定",
+      "inputs": [
+        "发布者 patient/subject ID 或元数据"
+      ],
+      "blocked_action": "只能报告原图级独立，并显式写 limitation",
+      "missing": [
+        "发布者 patient/subject ID 或元数据"
+      ],
+      "blocked": true
+    }
+  ],
+  "n_blocked_tasks": 3,
+  "code_fingerprint": "3b3dc74c7da7711181a57c33d25f6f0c4ed8ddabbcfa14a6851067b98d4eeece",
+  "stamped_at_utc": "2026-09-23T03:47:30+00:00",
+  "producer_version": "v2.7"
+}

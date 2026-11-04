@@ -1,0 +1,164 @@
+{
+  "torch": "2.13.0+cpu",
+  "cuda": null,
+  "cuda_available": false,
+  "baseline_fp": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+  "baseline_params": 56812813,
+  "smoke_path": "E:\\Code\\NeuroEvo\\DMSA_netV2\\DMSA_net\\smoke_test.py",
+  "params": {
+    "total": 56812813,
+    "trainable": 56812813,
+    "by_base_fn": {
+      "total_params": 56812813,
+      "trainable_params": 56812813,
+      "spatial_attention_params": 459,
+      "multi_scale_dilated_params": 10623003
+    },
+    "fp": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+    "fp_matches_baseline": true,
+    "params_match_baseline": true
+  },
+  "param_attribution": {
+    "edpb_fusion_conv": 21299200,
+    "edpb_fusion_bn": 36352,
+    "edpb_path1": 7581952,
+    "edpb_path2_conv1_3": 6867072,
+    "edpb_path2_mdc": 10630763,
+    "spatial_attention": 459,
+    "ilf_fusion23": 1312769,
+    "ilf_fusion34": 5246977,
+    "downsample": 2776576,
+    "backbone_other": 9553,
+    "head_fc": 1051140
+  },
+  "flops": {
+    "flops": 14984620662,
+    "macs": 7492310331,
+    "cpu_ms_per_image": 140.03395999898203,
+    "batch": 1,
+    "res": 224,
+    "top_modules": [
+      {
+        "name": "layer1.0.fusion_conv",
+        "macs": 205520896
+      },
+      {
+        "name": "layer1.1.fusion_conv",
+        "macs": 205520896
+      },
+      {
+        "name": "layer1.2.fusion_conv",
+        "macs": 205520896
+      },
+      {
+        "name": "layer2.0.fusion_conv",
+        "macs": 205520896
+      },
+      {
+        "name": "layer2.1.fusion_conv",
+        "macs": 205520896
+      },
+      {
+        "name": "layer2.2.fusion_conv",
+        "macs": 205520896
+      }
+    ],
+    "note": "CPU 吞吐仅相对参考；GPU 吞吐需在云环境重测",
+    "convention": {
+      "input_shape": "1x3x224x224",
+      "batch_size": 1,
+      "flop_definition": "1 MAC = 2 FLOPs（本报告 FLOPs = 2 × MACs）",
+      "counted_ops": "仅 Conv2d 与 Linear 的乘加",
+      "not_counted": "BN / ReLU / Swish / MaxPool / AvgPool / AdaptiveAvgPool / attention 内的 elementwise",
+      "method": "torch forward hook（自实现，不依赖 fvcore/thop）",
+      "profiler": "arch_probe.FlopCounter (torch 2.13.0+cpu)",
+      "mode": "model.eval() + torch.no_grad()"
+    }
+  },
+  "variants": [
+    {
+      "variant": "full",
+      "params": 56812813,
+      "fp": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+      "fp_equals_full": true,
+      "fp_equals_baseline": true,
+      "params_delta": 0,
+      "forward_ok": true,
+      "forward_sig": {
+        "sum": 0.001572499400936067,
+        "mean": 0.0001965624251170084,
+        "std": 0.0005890496540814638,
+        "abs_sum": 0.004235551226884127,
+        "shape_hash": "6a0dd2a6"
+      }
+    },
+    {
+      "variant": "no_sam",
+      "params": 56812354,
+      "fp": "672902ff248821cefce73dafee41048d81d1793d94bcdba4dd1b63acf93a2d12",
+      "fp_equals_full": false,
+      "fp_equals_baseline": false,
+      "params_delta": -459,
+      "forward_ok": true,
+      "forward_sig": {
+        "sum": -0.004074976313859224,
+        "mean": -0.000509372039232403,
+        "std": 0.0007414184510707855,
+        "abs_sum": 0.004746817983686924,
+        "shape_hash": "6a0dd2a6"
+      }
+    },
+    {
+      "variant": "no_mdc",
+      "params": 45037801,
+      "fp": "d8c00a220d1560689a17828421b0b4479542aa89f1522a797eeba0f7461cb45c",
+      "fp_equals_full": false,
+      "fp_equals_baseline": false,
+      "params_delta": -11775012,
+      "forward_ok": true,
+      "forward_sig": {
+        "sum": -0.0016399428714066744,
+        "mean": -0.0002049928589258343,
+        "std": 0.0006424491293728352,
+        "abs_sum": 0.003974460996687412,
+        "shape_hash": "6a0dd2a6"
+      }
+    },
+    {
+      "variant": "no_ilf",
+      "params": 55495947,
+      "fp": "2ebfa9cd433fd8063872a16d9e658d53e590b53784ebb3428e312a38ec99a9ae",
+      "fp_equals_full": false,
+      "fp_equals_baseline": false,
+      "params_delta": -1316866,
+      "forward_ok": true,
+      "forward_sig": {
+        "sum": -0.0005504216533154249,
+        "mean": -6.880270666442811e-05,
+        "std": 0.00010112628660863265,
+        "abs_sum": 0.0007651273044757545,
+        "shape_hash": "6a0dd2a6"
+      }
+    },
+    {
+      "variant": "no_dual_path",
+      "params": 46753037,
+      "fp": "88e5a7aad77d9798bdd5aaeeee07a93024834165ed828d47429d4fca7ebdbb9c",
+      "fp_equals_full": false,
+      "fp_equals_baseline": false,
+      "params_delta": -10059776,
+      "forward_ok": true,
+      "forward_sig": {
+        "sum": -0.0020654331892728806,
+        "mean": -0.00025817914865911007,
+        "std": 0.0005423573893494904,
+        "abs_sum": 0.003999396692961454,
+        "shape_hash": "6a0dd2a6"
+      }
+    }
+  ],
+  "full_matches_baseline": true,
+  "code_fingerprint": "3b3dc74c7da7711181a57c33d25f6f0c4ed8ddabbcfa14a6851067b98d4eeece",
+  "stamped_at_utc": "2026-09-23T03:48:54+00:00",
+  "producer_version": "v2.7"
+}

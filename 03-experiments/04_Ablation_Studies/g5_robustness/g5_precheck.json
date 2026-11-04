@@ -1,0 +1,89 @@
+{
+  "mode": "plan",
+  "pkg_version": "2026-09-24.4",
+  "baseline_dir": "/tmp/pycharm_project_28d63a37",
+  "data_root": "/home/featurize/work/Combined_Dataset",
+  "out_dir": "/home/featurize/work/AIC_train_again/g5",
+  "manifest_sha256": "51f5b251f9e7cce6c557798ae8fa8e263a6baf58c125524be4e1a1df4bd9edfd",
+  "jobs": [
+    {
+      "stage": "ABL",
+      "stage_title": "第三段·1 消融补完（no_dual_path × 折 {1,5}）",
+      "subdir": "abl",
+      "arm": "grouped",
+      "variant": "no_dual_path",
+      "seed": 42,
+      "fold": 1,
+      "label": "grouped__no_dual_path__seed42__fold1"
+    },
+    {
+      "stage": "ABL",
+      "stage_title": "第三段·1 消融补完（no_dual_path × 折 {1,5}）",
+      "subdir": "abl",
+      "arm": "grouped",
+      "variant": "no_dual_path",
+      "seed": 42,
+      "fold": 5,
+      "label": "grouped__no_dual_path__seed42__fold5"
+    },
+    {
+      "stage": "SEED",
+      "stage_title": "第三段·2 多种子（full · seed 43/44 × 折 {1,5}）",
+      "subdir": "seed",
+      "arm": "grouped",
+      "variant": "full",
+      "seed": 43,
+      "fold": 1,
+      "label": "grouped__full__seed43__fold1"
+    },
+    {
+      "stage": "SEED",
+      "stage_title": "第三段·2 多种子（full · seed 43/44 × 折 {1,5}）",
+      "subdir": "seed",
+      "arm": "grouped",
+      "variant": "full",
+      "seed": 43,
+      "fold": 5,
+      "label": "grouped__full__seed43__fold5"
+    },
+    {
+      "stage": "SEED",
+      "stage_title": "第三段·2 多种子（full · seed 43/44 × 折 {1,5}）",
+      "subdir": "seed",
+      "arm": "grouped",
+      "variant": "full",
+      "seed": 44,
+      "fold": 1,
+      "label": "grouped__full__seed44__fold1"
+    },
+    {
+      "stage": "SEED",
+      "stage_title": "第三段·2 多种子（full · seed 43/44 × 折 {1,5}）",
+      "subdir": "seed",
+      "arm": "grouped",
+      "variant": "full",
+      "seed": 44,
+      "fold": 5,
+      "label": "grouped__full__seed44__fold5"
+    }
+  ],
+  "estimated_hours": 15.751666666666667,
+  "cost_cny_per_hour": 2.4,
+  "cost_cny_estimated": 37.804,
+  "full_reference_folds": [
+    1,
+    5
+  ],
+  "g1_dir": "/home/featurize/work/AIC_train_again/g1",
+  "g1_found": true,
+  "sealed_test_policy": "not touched; val only",
+  "provenance": {
+    "script": "g5_run.py",
+    "script_sha256": "b08549724cb0a891eefcd8049b26af1e1776282f3145e41263eb625ca7035799",
+    "written_at_utc": "2026-09-27T03:13:08.021837+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

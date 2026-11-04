@@ -1,0 +1,7 @@
+{
+  "status": "ready_for_sealed_test",
+  "model_path": "/home/featurize/work/dmsa_final_outputs/dmsa_final_train_seed42_epoch126/final_model_epoch126.pth",
+  "model_sha256": "ba96575888e35764e3ff196674e52757d9a5f9c90742a38aa8f1d1f9a8457658",
+  "epoch": 126,
+  "sealed_test_has_been_evaluated_by_this_script": false
+}

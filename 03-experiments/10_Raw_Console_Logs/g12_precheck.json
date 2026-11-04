@@ -1,0 +1,93 @@
+{
+  "checks": [
+    {
+      "item": "输出目录",
+      "status": "OK",
+      "detail": "G2=/home/featurize/work/AIC_train_again/g2 ｜ G1=/home/featurize/work/AIC_train_again/g1（互不包含）"
+    },
+    {
+      "item": "产物文件名",
+      "status": "OK",
+      "detail": "G2 写 8 类、G1 写 9 类，无交集"
+    },
+    {
+      "item": "数据集隔离",
+      "status": "OK",
+      "detail": "输出区与数据集 /home/featurize/work/Combined_Dataset 互不嵌套"
+    },
+    {
+      "item": "数据可读",
+      "status": "OK",
+      "detail": "/home/featurize/work/Combined_Dataset/train 四类目录齐全（只读，不写入）"
+    },
+    {
+      "item": "G1 full 基准",
+      "status": "WARN",
+      "detail": "既没有五折参照、--variants 里也没有 full → **表格将没有 full 行、也没有 Δ vs full**。若这是你想要的（只想看各变体绝对精度），可忽略"
+    },
+    {
+      "item": "随机种子",
+      "status": "OK",
+      "detail": "G2 用 seeds=[43, 44]（每个种子一份独立副本 + 独立子进程）；G1 用 BASE_SEED=42（与基线同 seed，消融才有可比性），折内 DataLoader 另用 42+fold 派生。各进程独立 → 无 RNG 耦合"
+    },
+    {
+      "item": "数据读取",
+      "status": "WARN",
+      "detail": "两者**只读**同一个 train/，不会破坏数据；但若并行，DataLoader worker（各 6 个）会争抢 IO 与 /dev/shm，只会变慢、不影响正确性"
+    },
+    {
+      "item": "磁盘空间",
+      "status": "OK",
+      "detail": "输出区可用 41.1 GB（G2 每个 seed 会存模型权重，量级 GB；G1 只存 csv/json）"
+    },
+    {
+      "item": "GPU 显存",
+      "status": "WARN",
+      "detail": "同卡 cuda:0（NVIDIA GeForce RTX 4090，总 23.5 GB）：G2 训练峰值≈5085 MB，G1 训练峰值≈5098 MB（按 full 容量探测，是上界）；串行只需 max×1.15≈5863 MB，并行需合计×1.15≈11711 MB；当前空闲 16864 MB（可用上限按 0.85 计 = 14334 MB） → 同卡并行**放得下但会互相拖慢**；两者都要跑十几小时以上，独占更划算"
+    }
+  ],
+  "verdict": {
+    "g2_total_steps": 161280,
+    "g1_total_steps": 614400,
+    "g1_runs": 6,
+    "workload_note": "G2 = 2 seed × 126 epoch × 640 step = 161,280 step；G1 = 6 run × 200 epoch × 512 step = 614,400 step（绝对时长取决于机器，本预检查不实测）",
+    "disk_free_mb": 42076.0,
+    "verdict": "PARALLEL_WITH_CAVEATS",
+    "recommended": "serial",
+    "same_device": true,
+    "g2_peak_mb": 5085.4521484375,
+    "g1_peak_mb": 5098.4091796875,
+    "free_mb": 16863.9375,
+    "total_mb": 24109.6875,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 4090"
+  },
+  "mode_would_use": "serial",
+  "g2_out": "/home/featurize/work/AIC_train_again/g2",
+  "g1_out": "/home/featurize/work/AIC_train_again/g1",
+  "g2_device": "cuda:0",
+  "g1_device": "cuda:0",
+  "seeds": [
+    43,
+    44
+  ],
+  "variants": [
+    "no_sam",
+    "no_mdc",
+    "no_ilf"
+  ],
+  "folds": [
+    1,
+    5
+  ],
+  "epochs": 200,
+  "provenance": {
+    "script": "g12_run.py",
+    "script_sha256": "a0cbd8840336edac7ee9a2816cff1ce226e55c6bb567a91abed604c89dbb2c1c",
+    "written_at_utc": "2026-09-24T16:56:33.820620+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

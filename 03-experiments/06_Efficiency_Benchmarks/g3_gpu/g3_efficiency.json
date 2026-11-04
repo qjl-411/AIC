@@ -1,0 +1,89 @@
+{
+  "experiment": "G3 efficiency benchmark",
+  "environment": {
+    "torch": "2.2.2+cu121",
+    "torch_cuda_version": "12.1",
+    "cuda_available": true,
+    "cudnn_version": 8902,
+    "device_requested": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "device_total_memory_bytes": 25280839680,
+    "device_capability": "8.9"
+  },
+  "flop_convention": "输入 1x3x224x224，batch=1；1 MAC = 2 FLOPs；只统计 Conv2d 与 Linear；BN / 激活 / 池化不计入。",
+  "model": {
+    "name": "DMSA-Net (EnhancedResNeXt50)",
+    "params_total": 56812813,
+    "params_trainable": 56812813,
+    "architecture_fingerprint": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+    "fingerprint_matches_baseline": true,
+    "spatial_attention_params": 459,
+    "manifest_sha256": "51f5b251f9e7cce6c557798ae8fa8e263a6baf58c125524be4e1a1df4bd9edfd",
+    "smoke_test_sha256": "b3d8a2f39c573c8df09441e98f5f2571dcd71156b4037a78137af6eb593784ea"
+  },
+  "flops": {
+    "macs": 7492310331,
+    "flops": 14984620662,
+    "gflops": 14.984620662,
+    "published_flops": 14984620662,
+    "published_macs": 7492310331,
+    "matches_published": true,
+    "convention": "输入 1x3x224x224，batch=1；1 MAC = 2 FLOPs；只统计 Conv2d 与 Linear；BN / 激活 / 池化不计入。"
+  },
+  "resnext50_reference": {
+    "model": "resnext50_32x4d (torchvision, weights=None)",
+    "torchvision_version": "0.17.2+cu121",
+    "params": 25028904,
+    "measured_not_hand_computed": true,
+    "macs": 4230479872,
+    "flops": 8460959744
+  },
+  "param_ratio_dmsa_over_resnext": 2.2698881660978842,
+  "latency": {
+    "gpu_bs1": {
+      "measurable": true,
+      "batch_size": 1,
+      "warmup": 10,
+      "iters": 50,
+      "latency_ms_median": 11.31252899995161,
+      "latency_ms_q1": 11.288672999853588,
+      "latency_ms_q3": 11.353049999797804,
+      "latency_ms_min": 11.24437599992234,
+      "latency_ms_p95": 11.490366000089125,
+      "throughput_img_per_s": 88.39756344529836,
+      "peak_memory_mb": 370.3056640625,
+      "peak_memory_pct_of_total": 1.5359206296742751,
+      "device_total_memory_mb": 24109.6875
+    },
+    "cpu_bs1": {
+      "batch_size": 1,
+      "latency_ms_median": 73.99777599994195,
+      "per_image_ms": 73.99777599994195,
+      "iters": 10,
+      "note": "CPU 数值只能做相对比较，不能外推为 GPU 性能。"
+    }
+  },
+  "summary": {
+    "measured_7_items": {
+      "params_total": "MEASURED",
+      "resnext50_params": "MEASURED",
+      "flops": "MEASURED",
+      "macs": "MEASURED",
+      "cpu_latency": "MEASURED",
+      "gpu_latency": "MEASURED",
+      "gpu_throughput": "MEASURED",
+      "gpu_peak_memory": "MEASURED"
+    },
+    "n_measured": 8,
+    "note": "GPU 三项只在有 CUDA 的机器上可测。本脚本不会用 CPU 数值外推 GPU 性能——这是项目铁律。若在 GPU 机器上运行，请把 --device cuda:0 且确认 torch.cuda.is_available() 为 True。"
+  },
+  "provenance": {
+    "script": "g3_efficiency.py",
+    "script_sha256": "e92bd8d88c127463948cb07b6545fe2d13626add2e41a7ae54838026b3c139e3",
+    "written_at_utc": "2026-09-24T16:36:54.443082+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

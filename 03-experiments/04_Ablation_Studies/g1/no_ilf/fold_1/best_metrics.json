@@ -1,0 +1,40 @@
+{
+  "variant": "no_ilf",
+  "fold": 1,
+  "switches": {
+    "use_sam": true,
+    "use_mdc": true,
+    "use_ilf": false,
+    "use_dual_path": true
+  },
+  "params": 55495947,
+  "fingerprint": "2ebfa9cd433fd8063872a16d9e658d53e590b53784ebb3428e312a38ec99a9ae",
+  "fingerprint_equals_baseline": false,
+  "best": {
+    "accuracy": 0.25,
+    "epoch": 2,
+    "precision": 0.0625,
+    "recall": 0.25,
+    "f1": 0.1,
+    "kappa": 0.0,
+    "val_loss": 1.386328011751175
+  },
+  "epochs_run": 200,
+  "elapsed_seconds": 10357.83590388298,
+  "val_rows": 2048,
+  "val_class_counts": {
+    "Mild Impairment": 512,
+    "Moderate Impairment": 512,
+    "No Impairment": 512,
+    "Very Mild Impairment": 512
+  },
+  "provenance": {
+    "script": "g1_ablation.py",
+    "script_sha256": "9548d851eb0eb69e945415a8fbde7528f7f9c45bfc4cf0cb078802c24fc2fcb7",
+    "written_at_utc": "2026-09-25T10:23:24.616981+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

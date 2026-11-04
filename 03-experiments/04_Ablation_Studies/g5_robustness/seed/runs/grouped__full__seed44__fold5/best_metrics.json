@@ -1,0 +1,45 @@
+{
+  "arm": "grouped",
+  "variant": "full",
+  "seed": 44,
+  "fold": 5,
+  "switches": {
+    "use_sam": true,
+    "use_mdc": true,
+    "use_ilf": true,
+    "use_dual_path": true
+  },
+  "params": 56812813,
+  "fingerprint": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+  "fingerprint_equals_baseline": true,
+  "params_expected": 56812813,
+  "params_matches_doc": true,
+  "best": {
+    "accuracy": 0.990234375,
+    "epoch": 128,
+    "precision": 0.9902919979850774,
+    "recall": 0.990234375,
+    "f1": 0.990245621750829,
+    "kappa": 0.9869791666666666,
+    "val_loss": 0.05525938733190869
+  },
+  "epochs_run": 200,
+  "elapsed_seconds": 9514.624013900757,
+  "val_rows": 2048,
+  "val_class_counts": {
+    "Mild Impairment": 512,
+    "Moderate Impairment": 512,
+    "No Impairment": 512,
+    "Very Mild Impairment": 512
+  },
+  "sealed_test_untouched": true,
+  "provenance": {
+    "script": "g4_run.py",
+    "script_sha256": "e18e445dcadd844d0f88a6fa115e547def8967db5dadddadf12c643fcad9833d",
+    "written_at_utc": "2026-09-27T19:59:42.861617+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "provenance": {
+    "mode": "demo",
+    "n_boot": 2000,
+    "seed": 42,
+    "note": "合成数据，仅验证管线"
+  },
+  "results": {
+    "image_level": {
+      "tag": "image_level",
+      "n_units": 960,
+      "n_sources": 240,
+      "accuracy": 0.528125,
+      "macro_f1": 0.5284609258128307,
+      "weighted_f1": 0.5280686280521117,
+      "balanced_acc": 0.5294447586726998,
+      "moderate_f1": 0.5280665280665281,
+      "support": 960,
+      "macro_f1_lo": 0.49464561785060934,
+      "macro_f1_hi": 0.56142785633978,
+      "acc_lo": 0.49583333333333335,
+      "acc_hi": 0.5635416666666667,
+      "auc_macro": 0.7702383966992776,
+      "auc_lo": 0.7477032458113297,
+      "auc_hi": 0.7928247444404721
+    },
+    "source_mean_prob": {
+      "tag": "source_mean_prob",
+      "n_units": 240,
+      "n_sources": 240,
+      "accuracy": 0.6916666666666667,
+      "macro_f1": 0.6903118345337418,
+      "weighted_f1": 0.6912349703255818,
+      "balanced_acc": 0.6897812971342383,
+      "moderate_f1": 0.6949152542372882,
+      "support": 240,
+      "macro_f1_lo": 0.6285117166180696,
+      "macro_f1_hi": 0.7473380928420266,
+      "acc_lo": 0.6333333333333333,
+      "acc_hi": 0.75,
+      "auc_macro": 0.8971339472492076,
+      "auc_lo": 0.8707514885358261,
+      "auc_hi": 0.9225478181357946
+    },
+    "source_majority": {
+      "tag": "source_majority",
+      "n_units": 240,
+      "n_sources": 240,
+      "accuracy": 0.6791666666666667,
+      "macro_f1": 0.6778126395540127,
+      "weighted_f1": 0.6790432216240109,
+      "balanced_acc": 0.6777714932126696,
+      "moderate_f1": 0.689655172413793,
+      "support": 240,
+      "macro_f1_lo": 0.6156643115053679,
+      "macro_f1_hi": 0.736078250960228,
+      "acc_lo": 0.6208333333333333,
+      "acc_hi": 0.7375,
+      "auc_macro": 0.8971339472492076,
+      "auc_lo": 0.8707514885358261,
+      "auc_hi": 0.9225478181357946
+    },
+    "source_max_prob": {
+      "tag": "source_max_prob",
+      "n_units": 240,
+      "n_sources": 240,
+      "accuracy": 0.6208333333333333,
+      "macro_f1": 0.6244881152132119,
+      "weighted_f1": 0.6197640408764264,
+      "balanced_acc": 0.6264140271493213,
+      "moderate_f1": 0.603448275862069,
+      "support": 240,
+      "macro_f1_lo": 0.5588629809034146,
+      "macro_f1_hi": 0.679842412153155,
+      "acc_lo": 0.5583333333333333,
+      "acc_hi": 0.6791666666666667,
+      "auc_macro": 0.8971339472492076,
+      "auc_lo": 0.8707514885358261,
+      "auc_hi": 0.9225478181357946
+    }
+  },
+  "three_column_table": {
+    "headers": [
+      "口径",
+      "单位数",
+      "源数",
+      "Acc",
+      "Acc 95%CI",
+      "macro-F1",
+      "macroF1 95%CI",
+      "BalAcc",
+      "Moderate-F1",
+      "AUC",
+      "AUC 95%CI"
+    ],
+    "rows": [
+      [
+        "image_level",
+        960,
+        240,
+        "0.5281",
+        "[0.4958,0.5635]",
+        "0.5285",
+        "[0.4946,0.5614]",
+        "0.5294",
+        "0.5281",
+        "0.7702",
+        "[0.7477,0.7928]"
+      ],
+      [
+        "source_mean_prob",
+        240,
+        240,
+        "0.6917",
+        "[0.6333,0.7500]",
+        "0.6903",
+        "[0.6285,0.7473]",
+        "0.6898",
+        "0.6949",
+        "0.8971",
+        "[0.8708,0.9225]"
+      ],
+      [
+        "source_majority",
+        240,
+        240,
+        "0.6792",
+        "[0.6208,0.7375]",
+        "0.6778",
+        "[0.6157,0.7361]",
+        "0.6778",
+        "0.6897",
+        "0.8971",
+        "[0.8708,0.9225]"
+      ],
+      [
+        "source_max_prob",
+        240,
+        240,
+        "0.6208",
+        "[0.5583,0.6792]",
+        "0.6245",
+        "[0.5589,0.6798]",
+        "0.6264",
+        "0.6034",
+        "0.8971",
+        "[0.8708,0.9225]"
+      ]
+    ]
+  },
+  "aggregation_sensitivity": [
+    {
+      "rule": "mean_prob",
+      "macro_f1": 0.6903118345337418,
+      "delta_vs_mean_prob": 0.0
+    },
+    {
+      "rule": "majority",
+      "macro_f1": 0.6778126395540127,
+      "delta_vs_mean_prob": -0.012499194979729067
+    },
+    {
+      "rule": "max_prob",
+      "macro_f1": 0.6244881152132119,
+      "delta_vs_mean_prob": -0.06582371932052988
+    }
+  ],
+  "paired_bootstrap": {
+    "mean_prob_vs_majority": {
+      "delta_point": 0.012499194979729067,
+      "delta_lo": -0.021758068626264525,
+      "delta_hi": 0.04778427658844425,
+      "p_two_sided": 0.494,
+      "n_clusters": 240,
+      "n_replicates": 2000,
+      "method": "paired_cluster_bootstrap"
+    }
+  },
+  "design": {
+    "n_units": 960,
+    "n_clusters": 240,
+    "mean_cluster_size": 4.0,
+    "icc": 0.26866653430501086,
+    "deff": 1.8059996029150325,
+    "ess": 531.5615786683899
+  },
+  "label_inconsistent_sources": [],
+  "n_label_inconsistent": 0,
+  "code_fingerprint": "3b3dc74c7da7711181a57c33d25f6f0c4ed8ddabbcfa14a6851067b98d4eeece",
+  "stamped_at_utc": "2026-09-23T03:48:43+00:00",
+  "producer_version": "v2.7"
+}

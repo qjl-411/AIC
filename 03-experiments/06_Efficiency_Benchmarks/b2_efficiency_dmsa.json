@@ -1,0 +1,57 @@
+{
+  "model": "DMSA-Net (EnhancedResNeXt50, full 变体)",
+  "params_total": 56812813,
+  "params_trainable": 56812813,
+  "architecture_fingerprint": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+  "fingerprint_matches_baseline": true,
+  "flops_gflops": 14.984620662,
+  "macs_g": 7.492310331,
+  "flops_absolute": 14984620662,
+  "macs_absolute": 7492310331,
+  "_selfcheck_correction_2026_09_23": {
+    "issue": "2026-09-23 独立复核发现：已发布的 flops 字段 14,985,420,662 并不等于 2 × macs。",
+    "macs": 7492310331,
+    "correct_flops": 14984620662,
+    "previously_published_flops": 14985420662,
+    "error": 800000,
+    "ratio_previously_published_flops_over_macs": 2.000106776143093,
+    "expected_ratio": 2.0,
+    "conclusion": "字段值是笔误（14,985,420,662 应为 14,984,620,662）。FLOPs 的正确值 = 14,984,620,662（14.985 G 四舍五入后不变）。",
+    "verification": "用独立实现的 FlopCounter（_aic_boost/gpu/g3_efficiency.py）重跑，MACs 精确复现 7,492,310,331。",
+    "impact_on_paper": "论文里若写 14.985 GFLOPs 仍然正确（四舍五入一致）；但若写绝对数字，必须用 14,984,620,662。",
+    "note": "arch_probe.py 的 FlopCounter.flops 属性本身是正确的（`return 2 * self.macs`）；错误只出现在 _arch_out/arch_probe.json 的落盘字段里。"
+  },
+  "flops_convention": {
+    "input_shape": "1x3x224x224",
+    "batch_size": 1,
+    "flop_definition": "1 MAC = 2 FLOPs（本报告 FLOPs = 2 × MACs）",
+    "counted_ops": "仅 Conv2d 与 Linear 的乘加",
+    "not_counted": "BN / ReLU / Swish / MaxPool / AvgPool / AdaptiveAvgPool / attention 内的 elementwise",
+    "method": "torch forward hook（自实现，不依赖 fvcore/thop）",
+    "profiler": "arch_probe.FlopCounter (torch 2.13.0+cpu)",
+    "mode": "model.eval() + torch.no_grad()"
+  },
+  "cpu_ms_per_image": {
+    "value": 140.034,
+    "scope": "CPU 单张前向（相对参考）",
+    "machine": "Windows-11-10.0.26200-SP0",
+    "torch": "2.13.0+cpu"
+  },
+  "gpu_latency_ms": "NOT_MEASURED_ON_THIS_MACHINE",
+  "gpu_throughput_img_s": "NOT_MEASURED_ON_THIS_MACHINE",
+  "gpu_peak_memory_mb": "NOT_MEASURED_ON_THIS_MACHINE",
+  "gpu_not_measured_reason": "本机 torch 为 CPU-only 构建（cuda_available=False），无法测 GPU 指标。",
+  "param_attribution": {
+    "edpb_fusion_conv": 21299200,
+    "edpb_fusion_bn": 36352,
+    "edpb_path1": 7581952,
+    "edpb_path2_conv1_3": 6867072,
+    "edpb_path2_mdc": 10630763,
+    "spatial_attention": 459,
+    "ilf_fusion23": 1312769,
+    "ilf_fusion34": 5246977,
+    "downsample": 2776576,
+    "backbone_other": 9553,
+    "head_fc": 1051140
+  }
+}

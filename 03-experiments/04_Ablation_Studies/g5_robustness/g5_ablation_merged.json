@@ -1,0 +1,85 @@
+{
+  "folds": [
+    1,
+    5
+  ],
+  "rows": [
+    {
+      "variant": "full",
+      "params": 56812813,
+      "per_fold": {
+        "1": 0.87939453125,
+        "5": 0.99462890625
+      },
+      "n_folds": 2,
+      "accuracy_mean": 0.93701171875,
+      "fold_spread": 0.115234375,
+      "origin": "g4 A1 grouped__full__seed42__fold1",
+      "delta_vs_full_pp": 0.0
+    },
+    {
+      "variant": "no_sam",
+      "params": 56812354,
+      "per_fold": {
+        "1": 0.98876953125,
+        "5": 0.98876953125
+      },
+      "n_folds": 2,
+      "accuracy_mean": 0.98876953125,
+      "fold_spread": 0.0,
+      "origin": "g1（已有）",
+      "delta_vs_full_pp": 5.17578125
+    },
+    {
+      "variant": "no_mdc",
+      "params": 45037801,
+      "per_fold": {
+        "1": 0.98681640625,
+        "5": 0.98974609375
+      },
+      "n_folds": 2,
+      "accuracy_mean": 0.98828125,
+      "fold_spread": 0.0029296875,
+      "origin": "g1（已有）",
+      "delta_vs_full_pp": 5.126953125
+    },
+    {
+      "variant": "no_ilf",
+      "params": 55495947,
+      "per_fold": {
+        "1": 0.25,
+        "5": 0.27294921875
+      },
+      "n_folds": 2,
+      "accuracy_mean": 0.261474609375,
+      "fold_spread": 0.02294921875,
+      "origin": "g1（已有）",
+      "delta_vs_full_pp": -67.5537109375
+    },
+    {
+      "variant": "no_dual_path",
+      "params": 46753037,
+      "per_fold": {
+        "1": 0.84423828125,
+        "5": 0.98388671875
+      },
+      "n_folds": 2,
+      "accuracy_mean": 0.9140625,
+      "fold_spread": 0.1396484375,
+      "origin": "g5（本次）",
+      "delta_vs_full_pp": -2.294921875
+    }
+  ],
+  "full_reference_found": true,
+  "missing_variants": [],
+  "note": "Δ 只在 `full` 参照可用时给出；参照优先取 g4 的 A1（同一套脚本/同一张卡/逐折对齐），缺失时退到复现版五折（不同脚本、不同卡 ⇒ Δ 只能作参考性对照）。",
+  "provenance": {
+    "script": "g5_run.py",
+    "script_sha256": "b08549724cb0a891eefcd8049b26af1e1776282f3145e41263eb625ca7035799",
+    "written_at_utc": "2026-09-27T19:59:42.875275+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "cpu_smoke": {
+    "ok": true,
+    "params": 56812813,
+    "fingerprint": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+    "loss": 20.85481834411621
+  },
+  "rewrite_probe": {
+    "source_script": "/tmp/pycharm_project_28d63a37/final_train.py",
+    "source_sha256": "f81a248450c79957efd02772394f8979ff1b2c403ff7ffe87e0887fbd4758b8b",
+    "source_sha256_after": "f81a248450c79957efd02772394f8979ff1b2c403ff7ffe87e0887fbd4758b8b",
+    "variant_script": "/tmp/tmpvgzws_tq/final_train_seed43.py",
+    "variant_sha256": "3d407e658da4f8cb32e578ab6b060e703bb916b6dc29616036ef6b24d2f77582",
+    "seed": 43,
+    "run_name": "dry_seed43",
+    "output_dir": "/tmp/dry",
+    "data_root_override": "/home/featurize/work/Combined_Dataset"
+  },
+  "provenance": {
+    "script": "g2_multi_seed.py",
+    "script_sha256": "0a2487a6f955c2beebcee9a635d381c0f97bc5e7dd07139038125d815b752f8f",
+    "written_at_utc": "2026-09-24T16:00:34.325695+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

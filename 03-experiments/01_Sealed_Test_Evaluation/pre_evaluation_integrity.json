@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-08-26T09:25:41.140899",
+  "final_model_path": "/home/featurize/work/dmsa_final_outputs/dmsa_final_train_seed42_epoch126/final_model_epoch126.pth",
+  "final_model_sha256": "ba96575888e35764e3ff196674e52757d9a5f9c90742a38aa8f1d1f9a8457658",
+  "train_manifest_sha256": "51f5b251f9e7cce6c557798ae8fa8e263a6baf58c125524be4e1a1df4bd9edfd",
+  "test_manifest_sha256": "bc8e53e24722167fb3bf0ab468863ed8d0bcaec1341bb52007021802c31126a6",
+  "test_images": 1279,
+  "test_class_counts": {
+    "Mild Impairment": 179,
+    "Moderate Impairment": 12,
+    "No Impairment": 640,
+    "Very Mild Impairment": 448
+  },
+  "train_test_exact_sha256_overlap": 0,
+  "expected_final_epoch": 126,
+  "architecture_fingerprint": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975"
+}

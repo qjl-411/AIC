@@ -1,0 +1,3 @@
+﻿seed,exit_code,n_epochs_logged,first_train_loss,final_train_loss,variant_sha256,run_dir
+43,0,126,2.68541961023584,0.0030758817807657567,017e5aa03f0315e3b5aecfb361632bf93157edd8edcbf6d123f91e97ec41f5f6,/home/featurize/work/AIC_train_again/g2/dmsa_final_train_seed43_epoch126
+44,0,126,3.0182585775852204,0.0032191632747598847,fce81adbc9bcf7bcea8ee8291a0faa01c8a584093328dbe575a24e8ead101ca3,/home/featurize/work/AIC_train_again/g2/dmsa_final_train_seed44_epoch126

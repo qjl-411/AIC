@@ -1,0 +1,100 @@
+{
+  "n_units": 10240,
+  "n_sources": 9659,
+  "P1_group_leakage": {
+    "count": 0,
+    "rate": 0.0,
+    "detail": []
+  },
+  "P2_train_test_leakage": {
+    "count": 0,
+    "rate": 0.0,
+    "detail": []
+  },
+  "P3_cross_class": {
+    "count": 0,
+    "rate": 0.0,
+    "detail": []
+  },
+  "singleton_rate": 0.9657314421782793,
+  "singleton_units": 9328,
+  "largest_component": 64,
+  "components_ge10": 4,
+  "component_size_hist": {
+    "1": 9328,
+    "2": 277,
+    "3": 25,
+    "4": 10,
+    "5": 6,
+    "6": 5,
+    "8": 3,
+    "9": 1,
+    "12": 1,
+    "35": 1,
+    "39": 1,
+    "64": 1
+  },
+  "by_split": {
+    "train": 10240
+  },
+  "by_class": {
+    "Mild Impairment": 2560,
+    "Moderate Impairment": 2560,
+    "No Impairment": 2560,
+    "Very Mild Impairment": 2560
+  },
+  "per_class_source_counts": {
+    "Mild Impairment": {
+      "n_images": 2560,
+      "n_sources": 2435,
+      "singleton_sources": 2310,
+      "largest_component": 2,
+      "main_stat_images": 2560,
+      "confidence_breakdown": {
+        "singleton": 2310,
+        "S1": 250
+      }
+    },
+    "Moderate Impairment": {
+      "n_images": 2560,
+      "n_sources": 2161,
+      "singleton_sources": 2012,
+      "largest_component": 64,
+      "main_stat_images": 2560,
+      "confidence_breakdown": {
+        "singleton": 2012,
+        "S2": 548
+      }
+    },
+    "No Impairment": {
+      "n_images": 2560,
+      "n_sources": 2560,
+      "singleton_sources": 2560,
+      "largest_component": 1,
+      "main_stat_images": 2560,
+      "confidence_breakdown": {
+        "singleton": 2560
+      }
+    },
+    "Very Mild Impairment": {
+      "n_images": 2560,
+      "n_sources": 2503,
+      "singleton_sources": 2446,
+      "largest_component": 2,
+      "main_stat_images": 2560,
+      "confidence_breakdown": {
+        "singleton": 2446,
+        "S1": 114
+      }
+    }
+  },
+  "provenance": {
+    "mode": "legacy_manifest_group_id",
+    "path": "E:\\Code\\NeuroEvo\\DMSA_netV2\\DMSA_net\\pcv_v2_folds_seed42.csv",
+    "protocol_id": "pcv2_legacy",
+    "note": "使用冻结 manifest **自带的 group_id**（protocol_id=pcv2_legacy）。这是原管线的历史分组，A1 的任务是**独立复核**它是否漏掉分组，复核前不得称其为 source_group_v1。"
+  },
+  "code_fingerprint": "3b3dc74c7da7711181a57c33d25f6f0c4ed8ddabbcfa14a6851067b98d4eeece",
+  "stamped_at_utc": "2026-09-23T03:48:31+00:00",
+  "producer_version": "v2.7"
+}

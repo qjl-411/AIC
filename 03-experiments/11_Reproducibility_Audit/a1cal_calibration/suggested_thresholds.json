@@ -1,0 +1,19 @@
+{
+  "primary_th": 17,
+  "ssim_th": null,
+  "real_data_calibrated": false,
+  "calibration_pool": "synthetic_stress_test",
+  "distance_mode": "two-sided",
+  "angle_step": 45,
+  "use_flip": true,
+  "selection_set": "calibration",
+  "report_set": "holdout",
+  "n_cal": 75,
+  "n_holdout": 50,
+  "holdout_precision": 0.9524,
+  "holdout_recall": 1.0,
+  "note": "primary_th 在标定集上选、在留出集上报告（GPT T5 要求）；注意两者均来自**合成压力测试**，不代表真实 MRI 指标。**真实数据上的判别力必须另跑 `a0c_detector_power.py` 验证**（实测：本建议阈值在真实数据上 FPR 极高，不可直接使用）。ssim_th 未标定 -> A2 将拒绝运行（不得静默回退 0.98）",
+  "code_fingerprint": "3b3dc74c7da7711181a57c33d25f6f0c4ed8ddabbcfa14a6851067b98d4eeece",
+  "stamped_at_utc": "2026-09-23T03:48:26+00:00",
+  "producer_version": "v2.7"
+}

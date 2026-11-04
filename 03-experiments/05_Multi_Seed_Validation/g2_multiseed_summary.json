@@ -1,0 +1,47 @@
+{
+  "experiment": "G2 multi-seed reproducibility",
+  "baseline_seed": 42,
+  "epochs": 126,
+  "per_seed": [
+    {
+      "seed": 43,
+      "run_dir": "/home/featurize/work/AIC_train_again/g2/dmsa_final_train_seed43_epoch126",
+      "exit_code": 0,
+      "variant_sha256": "017e5aa03f0315e3b5aecfb361632bf93157edd8edcbf6d123f91e97ec41f5f6",
+      "n_epochs_logged": 126,
+      "final_train_loss": 0.0030758817807657567,
+      "first_train_loss": 2.68541961023584
+    },
+    {
+      "seed": 44,
+      "run_dir": "/home/featurize/work/AIC_train_again/g2/dmsa_final_train_seed44_epoch126",
+      "exit_code": 0,
+      "variant_sha256": "fce81adbc9bcf7bcea8ee8291a0faa01c8a584093328dbe575a24e8ead101ca3",
+      "n_epochs_logged": 126,
+      "final_train_loss": 0.0032191632747598847,
+      "first_train_loss": 3.0182585775852204
+    }
+  ],
+  "n_seeds_ok": 2,
+  "final_train_loss": {
+    "mean": 0.0031475225277628207,
+    "stdev": 0.00010131531602178752,
+    "min": 0.0030758817807657567,
+    "max": 0.0032191632747598847,
+    "values": [
+      0.0030758817807657567,
+      0.0032191632747598847
+    ]
+  },
+  "sealed_test_untouched": true,
+  "limitation_note": "本实验**不对 sealed test 做任何重复评价**。sealed test 仅在 seed=42 上做过一次正式评价（accuracy 0.989835809226）。多种子的稳健性证据来自train loss 曲线与（若--mode cv）五折 val 指标的离散程度。如果方案需要多种子的 test 指标，必须换一批从未使用过的测试数据，不可在原 sealed test 上重复挑选。",
+  "provenance": {
+    "script": "g2_multi_seed.py",
+    "script_sha256": "0a2487a6f955c2beebcee9a635d381c0f97bc5e7dd07139038125d815b752f8f",
+    "written_at_utc": "2026-09-24T21:12:22.302789+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

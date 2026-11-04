@@ -1,0 +1,267 @@
+{
+  "data_root": "E:\\Code\\NeuroEvo\\DMSA_netV2\\Alzheimer's MRI Dataset\\Alzheimer's MRI Dataset\\Combined Dataset",
+  "exists": true,
+  "counts": {
+    "train": {
+      "Mild Impairment": 2560,
+      "Moderate Impairment": 2560,
+      "No Impairment": 2560,
+      "Very Mild Impairment": 2560
+    },
+    "test": {
+      "Mild Impairment": 179,
+      "Moderate Impairment": 12,
+      "No Impairment": 640,
+      "Very Mild Impairment": 448
+    }
+  },
+  "frames": {
+    "declared": {
+      "size": [
+        224,
+        224
+      ],
+      "channels": 3,
+      "mode": "RGB"
+    },
+    "available": true,
+    "n_scanned": 11519,
+    "n_failed": 0,
+    "size_dist": {
+      "128x128": 11519
+    },
+    "mode_dist": {
+      "L": 11519
+    },
+    "matches_declared": false
+  },
+  "reconcile": {
+    "train": {
+      "n_manifest_rows": 10240,
+      "n_disk_files": 10240,
+      "n_ok": 10240,
+      "n_missing": 0,
+      "n_sha_mismatch": 0,
+      "n_extra_on_disk": 0,
+      "missing_examples": [],
+      "sha_mismatch_examples": [],
+      "extra_examples": [],
+      "verdict": "EXACT_MATCH",
+      "manifest": "E:\\Code\\NeuroEvo\\DMSA_netV2\\DMSA_net\\pcv_v2_folds_seed42.csv",
+      "manifest_sha256": "51f5b251f9e7cce6c557798ae8fa8e263a6baf58c125524be4e1a1df4bd9edfd"
+    },
+    "test": {
+      "n_manifest_rows": 1279,
+      "n_disk_files": 1279,
+      "n_ok": 1279,
+      "n_missing": 0,
+      "n_sha_mismatch": 0,
+      "n_extra_on_disk": 0,
+      "missing_examples": [],
+      "sha_mismatch_examples": [],
+      "extra_examples": [],
+      "verdict": "EXACT_MATCH",
+      "manifest": "E:\\Code\\NeuroEvo\\DMSA_netV2\\DMSA_net\\pcv_test_manifest_SEALED.csv",
+      "manifest_sha256": "bc8e53e24722167fb3bf0ab468863ed8d0bcaec1341bb52007021802c31126a6"
+    }
+  },
+  "sha_only": {
+    "train": {
+      "Mild Impairment": {
+        "n_unique": 2435,
+        "n_files": 2560,
+        "n_redundant": 125,
+        "size_dist": {
+          "1": 2310,
+          "2": 125
+        },
+        "multi_member_groups": 125
+      },
+      "Moderate Impairment": {
+        "n_unique": 2560,
+        "n_files": 2560,
+        "n_redundant": 0,
+        "size_dist": {
+          "1": 2560
+        },
+        "multi_member_groups": 0
+      },
+      "No Impairment": {
+        "n_unique": 2560,
+        "n_files": 2560,
+        "n_redundant": 0,
+        "size_dist": {
+          "1": 2560
+        },
+        "multi_member_groups": 0
+      },
+      "Very Mild Impairment": {
+        "n_unique": 2503,
+        "n_files": 2560,
+        "n_redundant": 57,
+        "size_dist": {
+          "1": 2446,
+          "2": 57
+        },
+        "multi_member_groups": 57
+      }
+    },
+    "test": {
+      "Mild Impairment": {
+        "n_unique": 179,
+        "n_files": 179,
+        "n_redundant": 0,
+        "size_dist": {
+          "1": 179
+        },
+        "multi_member_groups": 0
+      },
+      "Moderate Impairment": {
+        "n_unique": 12,
+        "n_files": 12,
+        "n_redundant": 0,
+        "size_dist": {
+          "1": 12
+        },
+        "multi_member_groups": 0
+      },
+      "No Impairment": {
+        "n_unique": 640,
+        "n_files": 640,
+        "n_redundant": 0,
+        "size_dist": {
+          "1": 640
+        },
+        "multi_member_groups": 0
+      },
+      "Very Mild Impairment": {
+        "n_unique": 448,
+        "n_files": 448,
+        "n_redundant": 0,
+        "size_dist": {
+          "1": 448
+        },
+        "multi_member_groups": 0
+      }
+    }
+  },
+  "train_test_exact_intersection": {
+    "Mild Impairment": {
+      "n_test": 179,
+      "n_exact_in_train": 0
+    },
+    "Moderate Impairment": {
+      "n_test": 12,
+      "n_exact_in_train": 0
+    },
+    "No Impairment": {
+      "n_test": 640,
+      "n_exact_in_train": 0
+    },
+    "Very Mild Impairment": {
+      "n_test": 448,
+      "n_exact_in_train": 0
+    }
+  },
+  "train_test_exact_summary": {
+    "n_test": 1279,
+    "n_hit": 0
+  },
+  "manifest_cross_check": {
+    "manifest": {
+      "train": {
+        "has_groups": true,
+        "group_reason_dist": {
+          "singleton": 9328,
+          "exact_duplicate": 364,
+          "near_duplicate_component": 548
+        },
+        "group_size_dist": {
+          "1": 9328,
+          "2": 277,
+          "3": 25,
+          "4": 10,
+          "5": 6,
+          "6": 5,
+          "8": 3,
+          "9": 1,
+          "12": 1,
+          "35": 1,
+          "39": 1,
+          "64": 1
+        },
+        "n_group_ids": 9659,
+        "max_group_size": 64,
+        "exact_redundant_by_class": {
+          "Mild Impairment": 125,
+          "Very Mild Impairment": 57
+        }
+      },
+      "test": {
+        "has_groups": false
+      }
+    },
+    "exact_vs_sha": {
+      "Mild Impairment": {
+        "manifest_exact_redundant": 125,
+        "measured_sha_redundant": 125,
+        "agree": true
+      },
+      "Moderate Impairment": {
+        "manifest_exact_redundant": 0,
+        "measured_sha_redundant": 0,
+        "agree": true
+      },
+      "No Impairment": {
+        "manifest_exact_redundant": 0,
+        "measured_sha_redundant": 0,
+        "agree": true
+      },
+      "Very Mild Impairment": {
+        "manifest_exact_redundant": 57,
+        "measured_sha_redundant": 57,
+        "agree": true
+      }
+    }
+  },
+  "geometry_conflict": {
+    "declared": "224x224 RGB",
+    "actual": "128x128 L",
+    "conflict": true,
+    "note": "磁盘帧几何与论文/训练代码声明的输入几何不一致；需确认 pipeline 中的 resize/转 RGB 步骤（见 data_prepare_check.py 与 smoke_test.py）"
+  },
+  "baseline_check": {
+    "available": true,
+    "module": "E:\\Code\\NeuroEvo\\DMSA_netV2\\DMSA_net\\data_prepare_check.py",
+    "source_zip_path_constant": "/home/featurize/work/DMSA_PCV2_20260824/input/Alzheimer_MRI.zip",
+    "verify_all_hashes_constant": true,
+    "ran_to_completion": true,
+    "error": null,
+    "counts_match": true,
+    "train_counts": {
+      "Mild Impairment": 2560,
+      "Moderate Impairment": 2560,
+      "No Impairment": 2560,
+      "Very Mild Impairment": 2560
+    },
+    "test_counts": {
+      "Mild Impairment": 179,
+      "Moderate Impairment": 12,
+      "No Impairment": 640,
+      "Very Mild Impairment": 448
+    },
+    "stdout_tail": [
+      "[PASS] Fold 1: train=8192, val=2048, train/class=2048, val/class=512, group_overlap=0",
+      "[PASS] Fold 2: train=8192, val=2048, train/class=2048, val/class=512, group_overlap=0",
+      "[PASS] Fold 3: train=8192, val=2048, train/class=2048, val/class=512, group_overlap=0",
+      "[PASS] Fold 4: train=8192, val=2048, train/class=2048, val/class=512, group_overlap=0",
+      "[PASS] Fold 5: train=8192, val=2048, train/class=2048, val/class=512, group_overlap=0",
+      "[PASS] train/test exact SHA-256 overlap = 0"
+    ],
+    "note": "复用的是基线作者自带的校验器，未调用其 main()（main 会解压 ZIP 到数据目录）"
+  },
+  "verdict": "ARRIVED_AND_RECONCILED",
+  "code_fingerprint": "3b3dc74c7da7711181a57c33d25f6f0c4ed8ddabbcfa14a6851067b98d4eeece",
+  "stamped_at_utc": "2026-09-23T03:48:18+00:00",
+  "producer_version": "v2.7"
+}

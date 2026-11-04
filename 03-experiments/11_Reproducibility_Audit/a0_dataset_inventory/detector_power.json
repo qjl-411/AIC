@@ -1,0 +1,190 @@
+{
+  "data_root": "E:\\Code\\NeuroEvo\\DMSA_netV2\\Alzheimer's MRI Dataset\\Alzheimer's MRI Dataset\\Combined Dataset",
+  "transform_set": {
+    "angle_step": 45,
+    "use_flip": true,
+    "n_transforms": 16
+  },
+  "null_class": "No Impairment",
+  "cache_entries": 11519,
+  "A_null": {
+    "n": 12720,
+    "hist": {
+      "0": 132,
+      "2": 1383,
+      "4": 2820,
+      "6": 2705,
+      "8": 2634,
+      "10": 2038,
+      "12": 847,
+      "14": 154,
+      "16": 7
+    },
+    "quantiles": {
+      "P1": 0.0,
+      "P5": 2.0,
+      "P25": 4.0,
+      "P50": 6.0,
+      "P75": 8.0,
+      "P95": 12.0,
+      "P99": 14.0
+    },
+    "min": 0,
+    "max": 16
+  },
+  "B_exact": {
+    "n": 182,
+    "hist": {
+      "0": 182
+    },
+    "quantiles": {
+      "P1": 0.0,
+      "P5": 0.0,
+      "P25": 0.0,
+      "P50": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 0.0
+    },
+    "min": 0,
+    "max": 0,
+    "group_reason": "exact_duplicate",
+    "sampled": false
+  },
+  "C_near": {
+    "n": 3000,
+    "hist": {
+      "0": 2838,
+      "2": 161,
+      "4": 1
+    },
+    "quantiles": {
+      "P1": 0.0,
+      "P5": 0.0,
+      "P25": 0.0,
+      "P50": 0.0,
+      "P75": 0.0,
+      "P95": 2.0,
+      "P99": 2.0
+    },
+    "min": 0,
+    "max": 4,
+    "group_reason": "near_duplicate_component",
+    "sampled": true
+  },
+  "pr_table": [
+    {
+      "th": 0,
+      "tpr": 0.946,
+      "fpr": 0.010377358490566037,
+      "n_null_le": 132
+    },
+    {
+      "th": 1,
+      "tpr": 0.946,
+      "fpr": 0.010377358490566037,
+      "n_null_le": 132
+    },
+    {
+      "th": 2,
+      "tpr": 0.9996666666666667,
+      "fpr": 0.11910377358490566,
+      "n_null_le": 1515
+    },
+    {
+      "th": 3,
+      "tpr": 0.9996666666666667,
+      "fpr": 0.11910377358490566,
+      "n_null_le": 1515
+    },
+    {
+      "th": 4,
+      "tpr": 1.0,
+      "fpr": 0.3408018867924528,
+      "n_null_le": 4335
+    },
+    {
+      "th": 5,
+      "tpr": 1.0,
+      "fpr": 0.3408018867924528,
+      "n_null_le": 4335
+    },
+    {
+      "th": 6,
+      "tpr": 1.0,
+      "fpr": 0.5534591194968553,
+      "n_null_le": 7040
+    },
+    {
+      "th": 7,
+      "tpr": 1.0,
+      "fpr": 0.5534591194968553,
+      "n_null_le": 7040
+    },
+    {
+      "th": 8,
+      "tpr": 1.0,
+      "fpr": 0.7605345911949686,
+      "n_null_le": 9674
+    },
+    {
+      "th": 9,
+      "tpr": 1.0,
+      "fpr": 0.7605345911949686,
+      "n_null_le": 9674
+    },
+    {
+      "th": 10,
+      "tpr": 1.0,
+      "fpr": 0.9207547169811321,
+      "n_null_le": 11712
+    },
+    {
+      "th": 11,
+      "tpr": 1.0,
+      "fpr": 0.9207547169811321,
+      "n_null_le": 11712
+    },
+    {
+      "th": 12,
+      "tpr": 1.0,
+      "fpr": 0.9873427672955974,
+      "n_null_le": 12559
+    },
+    {
+      "th": 16,
+      "tpr": 1.0,
+      "fpr": 1.0,
+      "n_null_le": 12720
+    },
+    {
+      "th": 17,
+      "tpr": 1.0,
+      "fpr": 1.0,
+      "n_null_le": 12720
+    },
+    {
+      "th": 20,
+      "tpr": 1.0,
+      "fpr": 1.0,
+      "n_null_le": 12720
+    }
+  ],
+  "a1cal_suggested_primary_th": 17,
+  "config_primary_th": null,
+  "a1cal_th_on_real_data": {
+    "th": 17,
+    "tpr": 1.0,
+    "fpr": 1.0,
+    "n_null_le": 12720
+  },
+  "verdict": [
+    "null 池中 d=0 的对：132/12720（1.04%） —— 这些是真实近重复还是低分辨率 pHash 碰撞**无法区分**",
+    "A1-cal 建议阈值 17 的 FPR = 1.0000 > 0.5 ⇒ **合成压力测试的阈值不可迁移到真实数据**",
+    "存在 FPR≤5% 且 TPR≥90% 的阈值：是（th=[0, 1]）",
+    "本数据**没有 verified-negative 池** ⇒ 任何阈值都无法被**验证**；G0-C（blocked_missing_lineage）因此有独立于 lineage 的第二个理由"
+  ],
+  "code_fingerprint": "3b3dc74c7da7711181a57c33d25f6f0c4ed8ddabbcfa14a6851067b98d4eeece",
+  "stamped_at_utc": "2026-09-23T03:47:20+00:00",
+  "producer_version": "v2.7"
+}

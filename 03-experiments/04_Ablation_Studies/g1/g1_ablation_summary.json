@@ -1,0 +1,81 @@
+{
+  "experiment": "G1 module ablation matrix",
+  "folds_requested": [
+    1,
+    5
+  ],
+  "epochs": 200,
+  "batch_size": 16,
+  "seed": 42,
+  "selection_rule": "折内按 val accuracy 选 best epoch（与基线一致）",
+  "validation_only": true,
+  "sealed_test_untouched": true,
+  "full_reference_note": null,
+  "table": [
+    {
+      "variant": "no_sam",
+      "params": 56812354,
+      "n_folds": 2,
+      "accuracy_mean": 0.98876953125,
+      "accuracy_min": 0.98876953125,
+      "accuracy_max": 0.98876953125,
+      "fold_spread": 0.0,
+      "per_fold": {
+        "1": 0.98876953125,
+        "5": 0.98876953125
+      },
+      "best_epochs": [
+        115,
+        121
+      ],
+      "delta_vs_full": null
+    },
+    {
+      "variant": "no_mdc",
+      "params": 45037801,
+      "n_folds": 2,
+      "accuracy_mean": 0.98828125,
+      "accuracy_min": 0.98681640625,
+      "accuracy_max": 0.98974609375,
+      "fold_spread": 0.0029296875,
+      "per_fold": {
+        "1": 0.98681640625,
+        "5": 0.98974609375
+      },
+      "best_epochs": [
+        173,
+        107
+      ],
+      "delta_vs_full": null
+    },
+    {
+      "variant": "no_ilf",
+      "params": 55495947,
+      "n_folds": 2,
+      "accuracy_mean": 0.261474609375,
+      "accuracy_min": 0.25,
+      "accuracy_max": 0.27294921875,
+      "fold_spread": 0.02294921875,
+      "per_fold": {
+        "1": 0.25,
+        "5": 0.27294921875
+      },
+      "best_epochs": [
+        2,
+        2
+      ],
+      "delta_vs_full": null
+    }
+  ],
+  "capacity_warning": "关掉模块会同时改变模型容量（no_mdc −11,775,012 / no_dual_path −10,059,776）。因此这些变体的精度差 **不能直接归因给单个模块**，只能表述为「移除 X 后的整体效果（含容量变化）」。严格拆出模块语义贡献需要容量匹配对照。",
+  "limitation_note": "只跑 val（折内验证集），不评 sealed test。若只跑 1 折，差异可能被单折噪声淹没；fold_spread 字段给出折间离散度，请只在 |Δ| > fold_spread 时才声称差异显著。",
+  "provenance": {
+    "script": "g1_ablation.py",
+    "script_sha256": "9548d851eb0eb69e945415a8fbde7528f7f9c45bfc4cf0cb078802c24fc2fcb7",
+    "written_at_utc": "2026-09-25T12:57:37.342383+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

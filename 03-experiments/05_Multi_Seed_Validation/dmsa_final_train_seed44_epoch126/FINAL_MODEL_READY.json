@@ -1,0 +1,7 @@
+{
+  "status": "ready_for_sealed_test",
+  "model_path": "/home/featurize/work/AIC_train_again/g2/dmsa_final_train_seed44_epoch126/final_model_epoch126.pth",
+  "model_sha256": "27204bd968c112107363b1346120e34807b7633e26cde0e06de405aa77cefbc2",
+  "epoch": 126,
+  "sealed_test_has_been_evaluated_by_this_script": false
+}

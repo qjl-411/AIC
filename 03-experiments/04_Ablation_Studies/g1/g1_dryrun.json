@@ -1,0 +1,52 @@
+{
+  "cpu_smoke": {
+    "ok": true,
+    "params": 56812813,
+    "fingerprint": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+    "loss": 22.003276824951172
+  },
+  "variants": [
+    {
+      "variant": "full",
+      "params": 56812813,
+      "fingerprint": "8e542321b2886db4db0986dc19d8d8a0984a39c472c086e55ac1fd1db3d76975",
+      "forward_ok": true,
+      "equals_baseline": true,
+      "params_delta": 0
+    },
+    {
+      "variant": "no_sam",
+      "params": 56812354,
+      "fingerprint": "672902ff248821cefce73dafee41048d81d1793d94bcdba4dd1b63acf93a2d12",
+      "forward_ok": true,
+      "equals_baseline": false,
+      "params_delta": -459
+    },
+    {
+      "variant": "no_mdc",
+      "params": 45037801,
+      "fingerprint": "d8c00a220d1560689a17828421b0b4479542aa89f1522a797eeba0f7461cb45c",
+      "forward_ok": true,
+      "equals_baseline": false,
+      "params_delta": -11775012
+    },
+    {
+      "variant": "no_ilf",
+      "params": 55495947,
+      "fingerprint": "2ebfa9cd433fd8063872a16d9e658d53e590b53784ebb3428e312a38ec99a9ae",
+      "forward_ok": true,
+      "equals_baseline": false,
+      "params_delta": -1316866
+    }
+  ],
+  "gate_passed": true,
+  "provenance": {
+    "script": "g1_ablation.py",
+    "script_sha256": "3992eaba88483a737e1b4c30aa773d3030917fec0d9e61a55f3cf06a82e7abc4",
+    "written_at_utc": "2026-09-24T16:01:32.716389+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "ResNeXt50-32x4d (torchvision, weights=None)",
+  "params": 25028904,
+  "params_source": "torchvision 实测",
+  "torchvision": "0.28.0+cpu",
+  "note": "仅作参数量量级对照；本方案**未在同协议下重训该基线**，因此不得用于性能归因或互为对照的精度比较。",
+  "param_ratio_vs_dmsa": 2.2699,
+  "param_delta_vs_dmsa": 31783909
+}

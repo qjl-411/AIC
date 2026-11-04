@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/AIC_train_again/g2/_variants/final_train_seed4.py", line 1557, in <module>
+    main()
+  File "/home/featurize/work/AIC_train_again/g2/_variants/final_train_seed4.py", line 1293, in main
+    raise FileNotFoundError(
+FileNotFoundError: 找不到 train：/home/featurize/data/dmsa_pcv2/Combined Dataset/train
+请修改 DATA_ROOT，使其指向 Combined Dataset。

@@ -1,0 +1,40 @@
+{
+  "variants": [
+    "no_sam",
+    "no_mdc",
+    "no_ilf"
+  ],
+  "folds": [
+    1,
+    5
+  ],
+  "epochs": 200,
+  "batch_size": 16,
+  "seed": 42,
+  "lr": 0.001,
+  "lr_gamma": 0.96,
+  "num_workers": 6,
+  "manifest_sha256": "51f5b251f9e7cce6c557798ae8fa8e263a6baf58c125524be4e1a1df4bd9edfd",
+  "train_root": "/home/featurize/work/Combined_Dataset/train",
+  "smoke_test_sha256": "b3d8a2f39c573c8df09441e98f5f2571dcd71156b4037a78137af6eb593784ea",
+  "arch_probe_sha256": "15b42a68bd37f1d2a2394d5b53c86cda6825b251859bd790181aa005a6e27ae7",
+  "device": {
+    "torch": "2.2.2+cu121",
+    "cuda_available": true,
+    "torch_cuda_version": "12.1",
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "device_total_memory_bytes": 25280839680,
+    "device_capability": "8.9"
+  },
+  "sealed_test_policy": "not touched; val only",
+  "max_batches": null,
+  "provenance": {
+    "script": "g1_ablation.py",
+    "script_sha256": "9548d851eb0eb69e945415a8fbde7528f7f9c45bfc4cf0cb078802c24fc2fcb7",
+    "written_at_utc": "2026-09-25T02:07:36.816077+00:00",
+    "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+    "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+    "numpy": "1.26.4",
+    "cwd": "/tmp/pycharm_project_28d63a37"
+  }
+}

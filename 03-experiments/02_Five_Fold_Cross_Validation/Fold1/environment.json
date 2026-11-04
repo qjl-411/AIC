@@ -1,0 +1,13 @@
+{
+  "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+  "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.35",
+  "torch": "2.2.2+cu121",
+  "torchvision": "0.17.2+cu121",
+  "numpy": "1.26.4",
+  "device_requested_or_selected": "cuda:0",
+  "cuda_available": true,
+  "torch_cuda_version": "12.1",
+  "cudnn_version": 8902,
+  "gpu_name": "NVIDIA GeForce RTX 3060",
+  "gpu_total_memory_bytes": 12490440704
+}
