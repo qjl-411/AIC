@@ -1,0 +1,47 @@
+{
+  "script": "c0_make_control_manifest.py",
+  "generated_at_utc": "2026-09-26T01:52:13.069121+00:00",
+  "baseline_manifest": "E:\\Code\\NeuroEvo\\DMSA_netV2\\Again_train\\pcv_v2_folds_seed42.csv",
+  "baseline_manifest_sha256": "51f5b251f9e7cce6c557798ae8fa8e263a6baf58c125524be4e1a1df4bd9edfd",
+  "control_manifest": "E:\\Code\\NeuroEvo\\DMSA_netV2\\Again_train\\pcv_v2_folds_imgsplit_seed42_FROZEN.csv",
+  "control_manifest_sha256": "d823021990e317fa997fa660ac36ada1abbb3ed2b29cd01712f06e3707c168b8",
+  "shuffle_seed": 42,
+  "design": "类别分层（每类每折 512 val）+ 忽略 group_id；除 val_fold 外逐列沿用基线",
+  "self_check": {
+    "rows": 10240,
+    "per_class_total": {
+      "Mild Impairment": 2560,
+      "Moderate Impairment": 2560,
+      "No Impairment": 2560,
+      "Very Mild Impairment": 2560
+    },
+    "per_fold_sizes": "2048 val / 8192 train（每类 512 / 2048）",
+    "control_leak": {
+      "group_cross_fold": 262,
+      "sha_cross_fold": 140,
+      "n_groups": 9659,
+      "val_tainted_per_fold": {
+        "1": 166,
+        "2": 155,
+        "3": 149,
+        "4": 142,
+        "5": 162
+      },
+      "val_tainted_total": 774
+    },
+    "baseline_leak": {
+      "group_cross_fold": 0,
+      "sha_cross_fold": 0,
+      "n_groups": 9659,
+      "val_tainted_per_fold": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "val_tainted_total": 0
+    }
+  },
+  "frozen_note": "SHA-256 必须原样写进 c1_cv_matrix.py 的 CONTROL_MANIFEST_SHA256 常量；跑实验前后都不得再改本文件。"
+}
