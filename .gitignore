@@ -1,0 +1,44 @@
+# ---- 超过 GitHub 单文件 100 MB 硬限制，未入库（详见根 README 第五节）----
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.mp4
+*.avi
+*.mov
+
+# ---- 文献 PDF 全文库（336 篇，约 899 MB）----
+# 第三方文献副本，可由 LOCALIZE_LITERATURE_PDFS.sh 重建；元数据库已入库
+**/apps/api/data/pdfs/
+
+# ---- Python / Node 运行产物 ----
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+node_modules/
+.venv/
+venv/
+dist/
+.vite/
+coverage/
+
+# ---- 环境变量（可能含密钥；保留 example 模板）----
+.env
+*.env.local
+!.env.example
+!.env.production.example
+!.env.phase4.example
+
+# ---- 本机工具与临时文件 ----
+.workbuddy/
+_build_report.json
+*.tmp
+*.temp
+*.part
+.DS_Store
+Thumbs.db
+
+# 注意：本项目需要保留原始控制台日志（*.log）与参赛文档（*.pdf / *.docx / *.pptx）作为
+# 可复现证据，故此处**不排除**这些类型，请勿添加。
