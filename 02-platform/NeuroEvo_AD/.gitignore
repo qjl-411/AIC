@@ -1,0 +1,26 @@
+.git/
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+.env
+# 文献数据库（7.8MB，902 篇元数据）已纳入版本控制 —— 评委必须靠它才能使用研究中心功能
+apps/api/data/*.db-*
+apps/api/data/pdfs/
+apps/web/dist/
+
+# ---- 清理补充（生成物 / 临时文件，2026-09-20）----
+*.log
+*.tmp
+*.temp
+*.part
+.vite/
+.ruff_cache/
+.mypy_cache/
+coverage/
+
+# ---- 本机工具数据（不是项目资产，2026-09-27 推送 Gitee 时排除）----
+.workbuddy/
