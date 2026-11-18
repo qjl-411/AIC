@@ -7,6 +7,9 @@
 *.avi
 *.mov
 
+# 例外：05-demo 的作品演示视频已改走 Git LFS 入库（见 05-demo/README.md）
+!05-demo/*.mp4
+
 # ---- 文献 PDF 全文库（336 篇，约 899 MB）----
 # 第三方文献副本，可由 LOCALIZE_LITERATURE_PDFS.sh 重建；元数据库已入库
 **/apps/api/data/pdfs/

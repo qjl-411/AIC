@@ -1,7 +1,6 @@
 # 本仓库材料带 SHA256SUMS.txt 校验清单，任何行尾自动转换都会导致哈希失配。
 # 因此统一关闭文本规范化：Git 按原始字节存储，检出的文件与提交时逐字节一致。
 * -text
-
 # 大体积二进制/日志不做 diff 渲染，避免页面卡顿（不影响存储）
 *.log   -diff
 *.txt   -diff
@@ -11,8 +10,8 @@
 *.pptx  -diff
 *.glb   -diff
 *.tar.gz -diff
-
 # 代码文件在 GitHub 上仍按扩展名高亮
 *.py    linguist-language=Python
 *.ts    linguist-language=TypeScript
 *.tsx   linguist-language=TypeScript
+*.mp4 filter=lfs diff=lfs merge=lfs -text
